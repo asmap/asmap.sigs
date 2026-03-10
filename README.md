@@ -20,11 +20,11 @@ You must also ensure that the encoded files follow the naming conventions in [as
   - `SHA256SUMS.asc`: detached PGP signature over the `SHA256SUMS` file
 - `builder-keys/<signer>.gpg`: signer keys
 
-The attestation file should contain three lines, the first for the final result, the second for the filled ASmap and the third for the unfilled ASmap, for example:
+The attestation file should contain three lines, the first for the final result, the second for the filled ASmap and the third for the unfilled ASmap, for example (assuming `EPOCH=1700000000000`):
 ```
 cc199d5de04add6b5c2d95a72610c8a1a7b1f41fe01bd2b4c6db17795856aa31  final_result.txt
-1146cbba8719cf3988d377df579667f68f97d2376d67755beb1e38194e196cfc  final_result_filled.dat
-1c20ea2dee306af0a3ab4eaefaabe1e4c23a1c4256e60639e7ba48b2bbe56f24  final_result_unfilled.dat
+1146cbba8719cf3988d377df579667f68f97d2376d67755beb1e38194e196cfc  1700000000000_asmap_filled.dat
+1c20ea2dee306af0a3ab4eaefaabe1e4c23a1c4256e60639e7ba48b2bbe56f24  1700000000000_asmap_unfilled.dat
 ```
 
 ### Script Usage
