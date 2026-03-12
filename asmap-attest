@@ -113,6 +113,35 @@ EOF
 done
 
 ################
+# The SIGNER should have a corresponding .gpg key in builder-keys/
+################
+
+signer_key="builder-keys/${SIGNER}.gpg"
+if [ ! -f "$signer_key" ]; then
+cat << EOF
+ERR: No builder key found for signer '${SIGNER}':
+
+    '$signer_key'
+
+Hint: The SIGNER name must match a .gpg file under builder-keys/ in the
+      asmap.sigs repository (without the .gpg extension). Available signers:
+
+EOF
+    if [ -d "builder-keys" ]; then
+        for f in "builder-keys"/*.gpg; do
+            if [ -f "$f" ]; then
+                key_name="$(basename "$f" .gpg)"
+                echo "          ${key_name}"
+            fi
+        done
+    else
+        echo "          (builder-keys directory not found)"
+    fi
+    echo ""
+    exit 1
+fi
+
+################
 # The GPG key should be usable
 ################
 
