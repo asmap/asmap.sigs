@@ -1,3 +1,13 @@
+**!! NOTICE !!** 
+
+Attestations have moved into the [asmap-data](https://github.com/bitcoin-core/asmap-data) repository.
+This repository is archived.
+
+
+
+----------------
+
+
 Repository containing ASmap file attestations.
 
 The [asmap-data](https://github.com/bitcoin-core/asmap-data) repository contains ASmaps for use with Bitcoin Core. This repository contains attestations on those files.
